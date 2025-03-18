@@ -1,0 +1,370 @@
+//imports
+@import url('https://fonts.cdnfonts.com/css/aileron');
+@import url('https://fonts.cdnfonts.com/css/apple-garamond');
+
+/**
+* Global colors
+*/
+$backColors: #FAF9F6;
+$frontColors: black;
+$borderAnimation: #ff9966;
+
+/**
+* Global CSS
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: $backColors;
+}
+
+.customContainer{
+    margin: 0 5%;
+}
+
+h1, h2, h3, h4{
+    font-family: 'Aileron', sans-serif;
+    scroll-margin-top: 1000px;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+p{
+    font-family: 'Apple Garamond Light', sans-serif;
+}
+
+.linkBtn{
+    padding: 10px 15px;
+    color: $frontColors;
+    border: 1px solid $frontColors;
+    font-family: 'Apple Garamond Light', sans-serif;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: lightgray;
+    }
+}
+
+.customHr{
+  border: none;
+  height: 2px;
+  color: $frontColors;
+  background-color: $frontColors;
+}
+
+section{
+    scroll-margin-top: 110px;
+}
+
+.borderHeader{
+    border-top: 2px solid $frontColors;
+    margin-top: 25px;
+}
+
+/**
+* Navbar CSS
+*/
+.navbar {
+    background-color: $backColors;
+    padding: 10px 5%;
+    border-bottom: 1px solid $frontColors;
+    font-family: 'Aileron', sans-serif;
+
+    ul {
+        list-style:none;
+    }
+    ul li{
+        display:inline-block; 
+        padding:0 10px; 
+        position:relative;
+    }
+    ul li:not(:last-child)::after{
+        content:""; 
+        border:1px solid $frontColors;
+        border-width: 1px 1px 0 0;
+        position:absolute; 
+        right:-3px; 
+        top:0; 
+        height:100%;
+    }
+
+    .active{
+        text-decoration: underline;
+    }
+}
+
+/**
+* HomePage Css
+*/
+.homeTxt{
+    color: $frontColors;
+    padding: 5% 0;
+
+    .homeTitles{
+        padding-top: 29%;
+    }
+
+    h1{
+        font-size: 5rem;
+        margin-bottom: 15px;
+    }
+
+    h2{
+        font-size: 1.3rem;
+    }
+
+    h3{
+        font-size: 0.9rem;
+    }
+}
+
+/**
+* About part CSS
+*/
+.about{
+    .aboutHeading{
+        h2{
+            margin-left: 20px;
+        }
+
+        hr{
+            margin-top: 50px;
+        }
+    }
+
+    .aboutContent{
+        margin-top: 20px;
+    }
+}
+
+/**
+*   Digital art part CSS
+*/
+.digitalArt{
+    h3{
+        margin-top: 25px;
+    }
+
+    .artStyles{
+        padding-top: 80px;
+
+        .digitalArtImage{
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .coverArt{
+            margin-top: 30px;
+        }
+
+        .abstractArt{
+            margin-top: 60px;
+        }
+
+        .dArtTxt{
+            margin-top: 80px;
+        }
+
+        .coverArtTxt{
+            margin-top: 50px;
+        }
+    }
+}
+
+/**
+*   Programming part CSS
+*/
+.programmingContent{
+    .programmingBody{
+        width: 100%;
+
+        h3{
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .programmingCircles{
+            margin-top: 40px;
+
+            .skillsBtn{
+                transition: transform .3s;
+    
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+
+            p{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+/**
+*   CardComponent CSS   
+*/
+.card {
+    overflow: visible;
+    width: 100%;
+    height: 254px;
+  }
+  
+  .content {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms;
+    box-shadow: 0px 0px 10px 1px #000000ee;
+    border-radius: 5px;
+  }
+  
+  .back {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #151515;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .back::before {
+    position: absolute;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 250%;
+    background: linear-gradient(90deg, transparent, $borderAnimation, $borderAnimation, $borderAnimation, $borderAnimation, transparent);
+    animation: rotation_481 5000ms infinite linear;
+  }
+  
+  .backContent {
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    color: white;
+
+    svg{
+        width: auto;
+        height: 50px;
+    }
+  }
+  
+  @keyframes rotation_481 {
+    0% {
+      transform: rotateZ(0deg);
+    }
+  
+    0% {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+/**
+*   CodingSkillModal CSS
+*/
+.codingSkillModal{
+    h2{
+        font-size: 2rem;
+    }
+}
+
+/**
+*   contactContent CSS
+**/
+
+.contactContent{
+    margin-top: 40px;
+
+    svg{
+        width: 50%;
+        height: auto;
+        color: lightgray;
+    }
+}
+
+/**
+* Footer CSS
+*/
+.footer{
+    border-top: 2px solid $frontColors;
+
+    .getInTouch{
+        p{
+            margin-bottom: 20px;
+        }
+    }
+
+    .footerCard{
+        transition: transform .3s;
+    
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+/**
+* Copyright rule CSS
+*/
+.copyRightRule{
+    border: 2px solid $frontColors;
+
+    a{
+        text-decoration: underline;
+    }
+}
+
+/**
+* Media Queries for Phone
+*/
+@media only screen and (max-width: 600px) {
+    .homeTxt{
+        .homeTitles{
+            padding-top: 5px;
+        }
+    }
+
+    .about .aboutHeading hr{
+        margin-top: 0px;
+    }
+
+    .coverArtTxt, .dArtTxt{
+        margin-top: 10px!important;
+    }
+
+    .digitalArt{
+        margin-top: 100px;
+
+        h3{
+            margin-top: 0px;
+        }
+
+        .artStyles{
+            padding-top: 25px;
+        }
+    }
+
+    .digitalArt .artStyles .abstractArt{
+        margin-top: 30px;
+    }
+}
+
+

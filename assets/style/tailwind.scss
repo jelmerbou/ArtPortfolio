@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .toggle-btn div {
+    @apply bg-transparent transition-all duration-500;
+  }
+
+  .toggle-btn div::before {
+    @apply translate-y-1 rotate-45 transition-all duration-500;
+  }
+
+  .toggle-btn div::after {
+    @apply translate-y-1 -rotate-45 transition-all duration-500;
+  }
+}
